@@ -1,15 +1,39 @@
 package com.SCUBA.diver.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Diver {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String name;
-    private String email;
-    private int age;
-    private int dives;
-    private Date certified;
     private String phone;
+    private String email;
+    private String gender;
+
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date birthday;
+
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date certified;
+    private int totalDives;
+    private String organization;
     private Boolean contact;
+
+    public Long getId() { return id; }
+
+    public void setId(Long id) { this.id = id; }
 
     public String getName() {
         return name;
@@ -17,6 +41,14 @@ public class Diver {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -27,20 +59,24 @@ public class Diver {
         this.email = email;
     }
 
-    public int getAge() {
-        return age;
+    public String getGender() { return gender; }
+
+    public void setGender(String gender) { this.gender = gender; }
+
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
-    public int getDives() {
-        return dives;
+    public int getTotalDives() {
+        return totalDives;
     }
 
-    public void setDives(int dives) {
-        this.dives = dives;
+    public void setTotalDives(int totalDives) {
+        this.totalDives = totalDives;
     }
 
     public Date getCertified() {
@@ -51,12 +87,12 @@ public class Diver {
         this.certified = certified;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getOrganization() {
+        return organization;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setOrganization(String organization) {
+        this.organization = organization;
     }
 
     public Boolean getContact() {
