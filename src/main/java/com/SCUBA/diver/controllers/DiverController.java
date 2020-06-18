@@ -1,6 +1,5 @@
 package com.SCUBA.diver.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.SCUBA.diver.models.Diver;

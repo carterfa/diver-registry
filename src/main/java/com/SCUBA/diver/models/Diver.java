@@ -29,7 +29,6 @@ public class Diver {
     private Date certified;
     private int totalDives;
     private String organization;
-    private Boolean contact;
 
     public Long getId() { return id; }
 
@@ -95,11 +94,4 @@ public class Diver {
         this.organization = organization;
     }
 
-    public Boolean getContact() {
-        return contact;
-    }
-
-    public void setContact(Boolean contact) {
-        this.contact = contact;
-    }
 }

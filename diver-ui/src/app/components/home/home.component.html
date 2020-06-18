@@ -1,0 +1,40 @@
+<div class="container">
+  <form [formGroup]="diverform" (ngSubmit)="submitRegistration()" novalidate>
+    <div class="form-group">
+      <label>Diver Name</label>
+      <input type="text" class="form-control" formControlName="name" required autofocus/>
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" formControlName="email" required/>
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" class="form-control" formControlName="phone" required/>
+    </div>
+    <div class="form-group">
+      <label>Gender</label>
+      <input class="form-control" formControlName="gender"/>
+    </div>
+    <div class="form-group">
+      <label>Birthday</label>
+      <input type="date" class="form-control" formControlName="birthday"/>
+    </div>
+    <div class="form-group">
+      <label>Certified Date</label>
+      <input type="date" class="form-control" formControlName="certified" required/>
+    </div>
+    <div class="form-group">
+      <label>Total Dives</label>
+      <input type="number" class="form-control" formControlName="totalDives" required/>
+    </div>
+    <div class="form-group">
+      <label>Organization</label>
+      <input type="text" class="form-control" formControlName="organization" required/>
+    </div>
+    <div *ngIf="validMessage != ''">
+      <h3 class="has-info">{{validMessage}}</h3>
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+</div>
