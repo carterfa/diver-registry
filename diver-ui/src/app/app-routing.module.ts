@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './components/admin/admin.component';
-import { HomeComponent } from './components/home/home.component';
+import { RegisterComponent } from './components/register/register.component';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
 import { CallbackComponent } from './components/callback/callback.component';
 import { AuthGuard } from './services/auth.guard';
@@ -9,7 +9,7 @@ import { AuthGuard } from './services/auth.guard';
 const routes: Routes = [
 {
   path: '',
-  component: HomeComponent
+  component: RegisterComponent
 },
 {
   path: 'admin/view/:id',

@@ -1,7 +1,7 @@
 <div class="container">
   <form [formGroup]="diverform" (ngSubmit)="submitRegistration()" novalidate>
     <div class="form-group">
-      <label>Diver Name</label>
+      <label>Name</label>
       <input type="text" class="form-control" formControlName="name" required autofocus/>
     </div>
     <div class="form-group">
@@ -9,8 +9,12 @@
       <input type="email" class="form-control" formControlName="email" required/>
     </div>
     <div class="form-group">
+      <label>Password</label>
+      <input type="text" class="form-control" formControlName="password" required/>
+    </div>
+    <div class="form-group">
       <label>Phone</label>
-      <input type="text" class="form-control" formControlName="phone" required/>
+      <input type="text" class="form-control" formControlName="phone"/>
     </div>
     <div class="form-group">
       <label>Gender</label>
@@ -32,9 +36,14 @@
       <label>Organization</label>
       <input type="text" class="form-control" formControlName="organization" required/>
     </div>
+    <div class="form-group">
+      <label>Country</label>
+      <input type="text" class="form-control" formControlName="country" required/>
+    </div>
     <div *ngIf="validMessage != ''">
       <h3 class="has-info">{{validMessage}}</h3>
     </div>
-    <button type="submit" class="btn btn-primary" >Submit</button>
+    <div style="text-align: center; padding-bottom: 2em"><button type="submit" class="btn btn-primary" >Submit</button></div>
+
   </form>
 </div>

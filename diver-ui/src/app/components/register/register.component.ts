@@ -5,10 +5,10 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class HomeComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   diverform: FormGroup;
   validMessage: string = "";
@@ -20,12 +20,13 @@ export class HomeComponent implements OnInit {
   name: new FormControl('', Validators.required),
   phone: new FormControl('', Validators.required),
   email: new FormControl('', Validators.required),
+  password: new FormControl('', Validators.required),
   gender: new FormControl(),
   birthday: new FormControl(),
   certified: new FormControl('', Validators.required),
   totalDives: new FormControl('', Validators.required),
   organization: new FormControl('', Validators.required),
-  contact: new FormControl()
+  country: new FormControl('', Validators.required)
   });
   }
 

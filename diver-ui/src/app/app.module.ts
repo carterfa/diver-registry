@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DiverService } from './services/diver.service';
 import { AdminComponent } from './components/admin/admin.component';
-import { HomeComponent } from './components/home/home.component';
+import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
 import { CallbackComponent } from './components/callback/callback.component';
@@ -17,7 +17,7 @@ import { AuthGuard } from './services/auth.guard';
   declarations: [
     AppComponent,
     AdminComponent,
-    HomeComponent,
+    RegisterComponent,
     ViewRegistrationComponent,
     CallbackComponent
   ],

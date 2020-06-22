@@ -20,6 +20,9 @@ public class Diver {
     private String name;
     private String phone;
     private String email;
+
+
+    private String password;
     private String gender;
 
     @JsonFormat(shape= JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
@@ -29,6 +32,7 @@ public class Diver {
     private Date certified;
     private int totalDives;
     private String organization;
+    private String country;
 
     public Long getId() { return id; }
 
@@ -90,8 +94,23 @@ public class Diver {
         return organization;
     }
 
-    public void setOrganization(String organization) {
-        this.organization = organization;
+    public void setOrganization(String organization) { this.organization = organization; }
+
+    public String getPassword() {
+        return password;
     }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
 
 }
