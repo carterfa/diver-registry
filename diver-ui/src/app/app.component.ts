@@ -7,7 +7,7 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'diver-ui';
+  title = 'DiveIn';
 
   constructor(private authService: AuthService){
     authService.handleAuthentication();

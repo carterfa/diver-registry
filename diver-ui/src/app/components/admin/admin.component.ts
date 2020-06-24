@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DiverService } from '../../services/diver.service'
+import { DiverService } from '../../services/diver.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -9,7 +10,7 @@ import { DiverService } from '../../services/diver.service'
 export class AdminComponent implements OnInit {
   public divers;
 
-  constructor(private diverService: DiverService) { }
+  constructor(private diverService: DiverService, private authService: AuthService) { }
 
   ngOnInit(){
   console.log("ngOnInit");
@@ -23,5 +24,9 @@ export class AdminComponent implements OnInit {
     () => console.log('divers loaded')
   )
   }
+
+  logout(){
+    this.authService.logout();
+}
 
 }

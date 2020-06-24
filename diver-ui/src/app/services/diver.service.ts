@@ -22,7 +22,7 @@ export class DiverService {
 
   getDiver(id: number) {
     let token = localStorage.getItem('access_token');
-     return this.http.get('/server/api/v1/divers' + id,
+     return this.http.get('/server/api/v1/divers/' + id,
      {headers: new HttpHeaders().set('Authorization', 'Bearer ' + token)}
      );
     }
@@ -30,5 +30,10 @@ export class DiverService {
   createDiverRegistration(diver){
     let body = JSON.stringify(diver);
     return this.http.post('/server/api/v1/divers', body, httpOptions);
+  }
+
+  login(diver){
+    let body = JSON.stringify(diver);
+    return this.http.post('/server/api/v1/divers/login', body, httpOptions);
   }
 }

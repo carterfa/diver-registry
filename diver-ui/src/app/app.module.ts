@@ -12,6 +12,8 @@ import { ViewRegistrationComponent } from './components/view-registration/view-r
 import { CallbackComponent } from './components/callback/callback.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth.guard';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AuthGuard } from './services/auth.guard';
     AdminComponent,
     RegisterComponent,
     ViewRegistrationComponent,
-    CallbackComponent
+    CallbackComponent,
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

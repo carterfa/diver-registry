@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "diver-ui"
+    }
+  },
+  "defaultProject": "diver-ui",
+  "cli": {
+    "packageManager": "yarn"
+  }
 }

@@ -10,6 +10,8 @@ import { Observable } from 'rxjs/Observable';
 })
 export class RegisterComponent implements OnInit {
 
+  public diver;
+
   diverform: FormGroup;
   validMessage: string = "";
 
@@ -32,10 +34,11 @@ export class RegisterComponent implements OnInit {
 
   submitRegistration(){
   if (this.diverform.valid){
-    this.validMessage = "Thank you for joining our diver network!";
     this.diverService.createDiverRegistration(this.diverform.value).subscribe(
-    data => {
+    data => { this.diver = data;
     this.diverform.reset();
+    console.log(data);
+    this.validMessage = "Thank you for joining us! Your DiveIn id is " + this.diver.id + ".";
     return true;
     },
     error => {
