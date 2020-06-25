@@ -56,13 +56,36 @@ public class DiverController {
         }else{
             return false;
         }
-
-
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Long id) {
         diverRepository.deleteById(id);
+    }
+
+    @PutMapping("/{id}")
+    public Diver update(@RequestBody Diver diverUpdate, @PathVariable("id") Long id) {
+
+        Optional<Diver> dbSearch = diverRepository.findById(id);
+
+        if (dbSearch.isPresent()){
+            Diver diver = dbSearch.get();
+            diver.setName(diverUpdate.getName());
+            diver.setPhone(diverUpdate.getPhone());
+            diver.setEmail(diverUpdate.getEmail());
+            diver.setGender(diverUpdate.getGender());
+            diver.setBirthday(diverUpdate.getBirthday());
+            diver.setTotalDives(diverUpdate.getTotalDives());
+            diver.setCertified(diverUpdate.getCertified());
+            diver.setOrganization(diverUpdate.getOrganization());
+            diver.setCountry(diverUpdate.getCountry());
+            return diverRepository.save(diver);
+        }else{
+            return diverUpdate;
+        }
+
+
+
     }
 
 }
