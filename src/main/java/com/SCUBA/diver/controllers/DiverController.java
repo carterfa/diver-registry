@@ -60,4 +60,9 @@ public class DiverController {
 
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable("id") Long id) {
+        diverRepository.deleteById(id);
+    }
+
 }
