@@ -16,15 +16,16 @@ import com.auth0.spring.security.api.JwtWebSecurityConfigurer;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
     @Value(value = "${auth0.apiAudience}")
     private String apiAudience;
+
     @Value(value = "${auth0.issuer}")
     private String issuer;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        return bCryptPasswordEncoder;
+        return new BCryptPasswordEncoder();
     }
 
     @Override

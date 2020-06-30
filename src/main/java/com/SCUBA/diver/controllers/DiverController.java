@@ -49,9 +49,7 @@ public class DiverController {
 
         if (dbSearch.isPresent()){
             Diver dbDiver = dbSearch.get();
-            boolean result = passwordEncoder.matches(diver.getPassword(), dbDiver.getPassword());
-
-            return result;
+            return passwordEncoder.matches(diver.getPassword(), dbDiver.getPassword());
 
         }else{
             return false;
@@ -83,8 +81,6 @@ public class DiverController {
         }else{
             return diverUpdate;
         }
-
-
 
     }
 
